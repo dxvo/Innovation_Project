@@ -8,7 +8,7 @@ def home():
     return render_template('index.html')
 
 @app.route("/upload",methods=['GET', 'POST'])
-def home():
+def upload():
     return render_template('Upload.html')
 
 if __name__ == '__main__':
