@@ -66,7 +66,7 @@ body {
 
 #main {
   transition: margin-left .5s;
-  padding-left: 50px;
+  padding-left: 20px;
   padding-bottom: 20px;
 }
 
@@ -84,12 +84,13 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <a href="{{ url_for('home') }}">Home</a>
   <a href="{{ url_for('home') }}">Industries</a>
-  <a href="{{ url_for('upload') }}" >Predict</a>
+  <a href="{{ url_for('upload') }}" >Upload Data</a>
   <a href="{{ url_for('home') }}">Contact Us</a>
 </div>
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">☰</button>
+</div>
 
 <figure>
     <img src="../static/img/manufracturing/1.gif" alt="Header image" class="img-fluid" style="padding-top:10px; width:100%;height: 430px;">

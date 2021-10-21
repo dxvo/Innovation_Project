@@ -5,6 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../static/css/Upload.css">
+
+    <style>
+      input[type=button],
+      input[type=submit] {
+        background-color: #00AC5D;
+        border: none;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
 	<title>Upload File</title>
 </head>
 <body>
@@ -12,16 +25,26 @@
 		<div class="header">
 			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>			
 		</div>
-		<form class="body">
-			<input type="file" id="upload">
+		<form class="body" method ="post" enctype=multipart/form-data>
+			<input type="file" id="upload" name="file"/>
 			<label for="upload">
 				<i class="fa fa-file-text-o fa-3x"></i>
 				<p>
 					<strong>Drag and drop</strong> files here<br>
-					or <span>browse</span> to begin the upload
+					or <span>browse</span> to begin the upload<br><br>
+					<input type="submit" value="Submit & Predict"/><br>
+					{{message}}
+				</p>
+				<p>	
+					<div>
+						<a class="btn" href="{{url_for('home')}}" style="color: white; 
+							font-size: 15px; background: #00AC5D;">Home Page
+						</a>
+				  </div>
 				</p>
 			</label>
 		</form>
+
 	</div>
 </body>
 </html>

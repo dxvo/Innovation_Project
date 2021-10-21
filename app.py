@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for, flash, redirect, request,jsonify
+from flask import Flask, render_template, url_for, redirect, request,jsonify
+import os
 app = Flask(__name__)
 
 
@@ -9,7 +10,12 @@ def home():
 
 @app.route("/upload",methods=['GET', 'POST'])
 def upload():
-    return render_template('Upload.html')
+    if request.method == "POST":
+        file = request.files["file"]
+        file.save(os.path.join("uploads",file.filename))
+        #return redirect(url_for('home'))
+        return render_template('upload.html',message="File has been successfully uploaded")
+    return render_template('upload.html',message="")
 
 if __name__ == '__main__':
     app.run(debug=True)
