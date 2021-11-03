@@ -1,12 +1,14 @@
 from flask import Flask, render_template, url_for, redirect, request,jsonify
-import os
 import pandas as pd
 import pickle5 as pickle
+from forms import *
+from collections import defaultdict
 
 app = Flask(__name__)
 
 #load model
 model = pickle.load(open("model.pkl","rb"))
+app.config['SECRET_KEY'] = 'a26ade032e7040309ba635818774a38b'
 
 
 @app.route("/",methods=['GET', 'POST'])
@@ -14,27 +16,36 @@ model = pickle.load(open("model.pkl","rb"))
 def home():
     return render_template('index.html')
 
-@app.route("/upload",methods=['GET', 'POST'])
-def upload():
-    if request.method == "POST":
-        file = request.files["file"]
-        file.save(os.path.join("uploads",file.filename))
-        #file.save(os.path.join( os.path.dirname(__file__),app.config["UPLOADS"],file.filename))
-        #return redirect(url_for('home'))
-        return render_template('upload.html',message="File has been successfully uploaded")
-    return render_template('upload.html',message="")
+@app.route("/makePrediction", methods=['GET','POST'])
+def makePrediction():
+    form = Machinedata()
+    dict = defaultdict(int) #default dictionary
 
-@app.route("/test",methods=['POST'])
-def test():
+    if form.validate_on_submit():        
+        dict["machineID"] = form.machineID.data
+        dict["volt"] = form.volt.data
+        dict["rotate"] = form.rotate.data
+        dict["vibration"] = form.vibration.data
+        dict["pressure"] = form.pressure.data
+        dict["model"] = form.model.data
+        dict["age"] = form.age.data
+        dict["comp"] = form.comp.data
+        dict["time since last service (hrs)"] = form.lastService.data
+        dict["time since last failure (hrs)"] = form.lastFailure.data
+        
+        df = pd.DataFrame([dict]) #convert dictionary to dataframe
+        prediction = model.predict(df)
+        #print(f'Machine needs maintainance in',prediction[0]/24,'day(s)')
+        return render_template('displayResult.html', message = "Machine needs maintainance in {} day(s).".format(round(prediction[0]/24),2))
+    return render_template('getMachineData.html',form=form)
+
+@app.route("/API",methods=['POST'])
+def API():
     data = request.get_json() #return a dictionary
     df = pd.DataFrame([data]) #convert to dataframe
-    print (df.shape)
-    #name = data['name']
-    #location = data['location']
     prediction = model.predict(df)
-    #print(type(prediction))
+    return jsonify({'Status':'Success','Prediction':prediction[0]}),201
 
-    return jsonify({'result':'Success','prediction':prediction[0]})
 if __name__ == '__main__':
     app.run(debug=True)
 

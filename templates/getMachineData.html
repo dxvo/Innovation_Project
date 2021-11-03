@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Machine Data</legend>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            {{ form.machineID.label(class="form-control-label") }}
+                            {% if form.machineID.errors %}
+                                {{ form.machineID(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.machineID.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.machineID(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                            {{ form.age.label(class="form-control-label") }}
+                            {% if form.age.errors %}
+                                {{ form.age(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.age.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.age(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            {{ form.comp.label(class="form-control-label") }}
+                            {% if form.comp.errors %}
+                                {{ form.comp(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.comp.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.comp(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            {{ form.volt.label(class="form-control-label") }}
+                            {% if form.volt.errors %}
+                                {{ form.volt(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.volt.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.volt(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            {{ form.rotate.label(class="form-control-label") }}
+                            {% if form.rotate.errors %}
+                                {{ form.rotate(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.rotate.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.rotate(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            {{ form.vibration.label(class="form-control-label") }}
+                            {% if form.vibration.errors %}
+                                {{ form.vibration(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.vibration.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.vibration(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            {{ form.model.label(class="form-control-label") }}
+                            {% if form.model.errors %}
+                                {{ form.model(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.model.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.model(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            {{ form.pressure.label(class="form-control-label") }}
+                            {% if form.pressure.errors %}
+                                {{ form.pressure(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.pressure.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.pressure(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            {{ form.lastService.label(class="form-control-label") }}
+                            {% if form.lastService.errors %}
+                                {{ form.lastService(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.lastService.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.lastService(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            {{ form.lastFailure.label(class="form-control-label") }}
+                            {% if form.lastFailure.errors %}
+                                {{ form.lastFailure(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.lastFailure.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.lastFailure(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group" onclick="alert('Thanks you')">
+                {{form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

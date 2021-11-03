@@ -2,7 +2,7 @@ body {
   background: #fafafa;
   color: #333333;
   margin-top: 5rem;
-  background-image: url("../static/img/base.jpg");
+  background-image: url("../static/img/base.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12,10 +12,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
-}
-
-.bg-steel {
-  background-color: black;
 }
 
 .site-header .navbar-nav .nav-link {

@@ -16,14 +16,14 @@ body {
     align-items: center;
 }
 
-.file__upload {
+.display_result {
     width: 400px;
     height: 445px;
     margin: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
 
-.file__upload .header {
+.display_result .header {
     width: 100%;
     height: 145px;
     background: #00AC5D;
@@ -34,24 +34,24 @@ body {
     border-radius: 5px 5px 0 0;
 }
 
-.file__upload .header p {
+.display_result .header p {
     color: #FFF;
 }
 
-.file__upload .header p i.fa {
+.display_result .header p i.fa {
     margin-right: 10px;
 }
 
-.file__upload .header p span {
+.display_result .header p span {
     font-size: 2rem;
     font-weight: 100;
 }
 
-.file__upload .header p span span {
+.display_result .header p span span {
     font-weight: 600;
 }
 
-.file__upload .body {
+.display_result .body {
     background: #FFF;
     width: 100%;
     height: calc(100% - 145px);
@@ -63,20 +63,20 @@ body {
     text-align: center;
 }
 
-.file__upload .body input[type="file"] {
+.display_result .body input[type="file"] {
     display: none;
 }
 
-.file__upload .body i.fa {
+.display_result .body i.fa {
     color: #d3d3d3;
     margin-bottom: 20px;
 }
 
-.file__upload .body p strong {
+.display_result .body p strong {
     color: #00AC5D;
 }
 
-.file__upload .body p span {
+.display_result .body p span {
     color: #00AC5D;
     text-decoration: underline;
 }

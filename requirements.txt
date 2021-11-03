@@ -1,9 +1,12 @@
-appnope == 0.1.2
+
 certifi==2021.10.8
+
 click==8.0.3
+
 entrypoints==0.3
 flash==1.0.3
 Flask==2.0.2
+Flask-WTF==0.15.1
 gunicorn==20.1.0
 itsdangerous==2.0.1
 Jinja2==3.0.2
@@ -14,9 +17,11 @@ pickle5==0.0.11
 pytz==2021.3
 scikit-learn==1.0.1
 scipy==1.7.1
-sip==6.4.0
+ip==6.4.0
 sklearn==0.0
 terminado==0.9.4
-threadpoolctl==3.0.0
+hreadpoolctl==3.0.0
+toml==0.10.2
 webencodings==0.5.1
 Werkzeug==2.0.2
+WTForms==2.3.3
