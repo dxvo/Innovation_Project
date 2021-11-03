@@ -16,6 +16,10 @@ app.config['SECRET_KEY'] = 'a26ade032e7040309ba635818774a38b'
 def home():
     return render_template('index.html')
 
+@app.route("/contact",methods=['GET', 'POST'])
+def contact():
+    return render_template('contact.html')
+
 @app.route("/makePrediction", methods=['GET','POST'])
 def makePrediction():
     form = Machinedata()
