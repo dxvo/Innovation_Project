@@ -17,7 +17,7 @@ pickle5==0.0.11
 pytz==2021.3
 scikit-learn==1.0.1
 scipy==1.7.1
-ip==6.4.0
+sip==6.4.0
 sklearn==0.0
 terminado==0.9.4
 hreadpoolctl==3.0.0
