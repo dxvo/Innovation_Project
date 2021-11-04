@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect, request,jsonify
+from flask import Flask, json, render_template, url_for, redirect, request,jsonify
 import pandas as pd
 import pickle5 as pickle
 from forms import *
@@ -49,6 +49,16 @@ def API():
     df = pd.DataFrame([data]) #convert to dataframe
     prediction = model.predict(df)
     return jsonify({'Status':'Success','Prediction':prediction[0]}),201
+
+
+@app.route("/chart",methods=['POST'])
+def chart():
+    labels = request.json['labels']
+    values = request.json['values']
+    #print(len(arr2))
+    #return jsonify({"Status":'Success'}),201
+    return render_template('graph.html',labels=labels,values=values),201
+
 
 if __name__ == '__main__':
     app.run(debug=True)

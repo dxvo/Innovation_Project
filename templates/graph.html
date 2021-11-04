@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<title>Maintenance Overview Chart</title>
+</head>
+
+<body>
+    <canvas id="myChart" width="900" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{labels|safe }},
+                datasets: [{
+                    label: "Machine Count",
+                    data: {{values|safe }},
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                    
+                },
+                plugins:{
+                    title: {
+                    display: true,
+                    text: 'Machine Maintenace Overview',
+                        padding: {
+                            top:10,
+                            bottom: 30
+                        }
+                    }
+                 }
+
+            }
+        });
+</script>
+</body>
+</html>
