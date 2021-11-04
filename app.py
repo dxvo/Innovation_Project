@@ -53,8 +53,9 @@ def API():
 
 @app.route("/chart",methods=['POST'])
 def chart():
-    labels = request.json['labels']
-    values = request.json['values']
+    labels = request.json['labels'] #Array
+    string_values = request.json['values']
+    values = [int(i) for i in string_values]
     #print(len(arr2))
     #return jsonify({"Status":'Success'}),201
     return render_template('graph.html',labels=labels,values=values),201
