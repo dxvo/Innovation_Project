@@ -40,7 +40,7 @@ def makePrediction():
         df = pd.DataFrame([dict]) #convert dictionary to dataframe
         prediction = model.predict(df)
         #print(f'Machine needs maintainance in',prediction[0]/24,'day(s)')
-        return render_template('displayResult.html', message = "Machine needs maintainance in {} day(s).".format(round(prediction[0]/24),2))
+        return render_template('displayResult.html', message = "Next failure in {} day(s).".format(round(prediction[0]/24),2))
     return render_template('getMachineData.html',form=form)
 
 @app.route("/API",methods=['POST'])

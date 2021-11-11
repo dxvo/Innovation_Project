@@ -1,266 +1,475 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
+
+    <!--====== Required meta tags ======-->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/magnific-popup.css">
-    <link rel="stylesheet" href="../static/css/templatemo-style.css">
+    <!--====== Title ======-->
     <title>Ashling Innovation Project</title>
 
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="static/assets/images/favicon.png" type="image/png">
 
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #00AC5D;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
 
-.sidebar a {
-  padding: 8px 8px 8px 50px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #FFFFFF;
-  display: block;
-  transition: 0.3s;
-}
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="static/assets/css/LineIcons.css">
 
-.sidebar a:hover {
-  color: #f1f1f1;
-}
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="static/assets/css/slick.css">
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #00AC5D;
-  color: #FFFFFF;
-  padding: 10px 15px;
-  border: none;
-}
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="static/assets/css/animate.css">
 
-.openbtn:hover {
-  background-color: #444;
-}
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="static/assets/css/default.css">
 
-#main {
-  transition: margin-left .5s;
-  padding-left: 20px;
-  padding-bottom: 20px;
-}
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="static/assets/css/style.css">
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-</style>
+
 </head>
 
 <body>
+    
+    <!--====== PRELOADER PART START ======-->
 
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="{{ url_for('home') }}">Home</a>
-  <a href="{{ url_for('home') }}">Industries</a>
-  <a href="{{ url_for('makePrediction') }}" >Make Prediction</a>
-  <a href="{{ url_for('contact') }}">Demo Request</a>
-</div>
-
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰</button>
-</div>
-
-<figure>
-    <img src="../static/img/manufracturing/1.gif" alt="Header image" class="img-fluid" style="padding-top:10px; width:100%;height: 430px;">
-</figure>
-
-<div class="tm-content-div" style="background-color:#222222">
-    <!-- Welcome section -->
-    <section id="welcome" class="tm-section" style="color: white;">
-        <header>
-            <h2 class="tm-blue-text tm-welcome-title tm-margin-b-25" style="color: #00AC5D;text-align: center;">
-            <strong>Innovation Team 8</strong>
-        </h2>
-        </header>
-        <p>
-          When maintenance of machinery (physical machines deployed on site) isn’t efficiently scheduled, 
-          equipment may need to be pulled off site for repairs at inconvenient and critical times. 
-        </p>
-    </section>
-    <!-- About section -->
-    <section id="about" class="tm-section">
-        <div class="row">                                                                
-            <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12 push-lg-4 push-md-5" style="color: white;">
-                <header>
-                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-10" style="text-align: center;color: #00AC5D;">
-                        <strong>Our Approach</strong>
-                    </h2>
-                </header>
-                <p>
-                  Predictive maintenance of machinery equipment using an Intelligent Automation (ML and RPA) web-based application to predict signs of degradation, 
-                  time of failure and involved physical components early by analyzing the telemetry data, 
-                  collected by IoT sensors, fed into it in real time to efficiently plan maintenance schedules 
-                  at convenient times minimizing the maintenance costs involved otherwise.
-                </p>
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-lg-8 pull-md-7 tm-about-img-container">
-                <img src="../static/img/manufracturing/2.gif" alt="Image" class="img-fluid" style="height:350px;">    
-            </div>  
-        </div>                            
-    </section>
-</div>
-
-
-<hr>
-<header> 
-    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-10" style="color:#00AC5D;padding-bottom: 20px;"> 
-        <strong> Meet The Team </strong></h2>
-</header>
-
-<br>
-      <div class="col-lg-4">
-        <div class="card" style="width: 20rem;">
-          <img src="../static/img/bot1.jpeg" alt="Jin" style="width:auto">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card" style="width: 20rem;">
-          <img src="../static/img/bot2.jpeg" alt="Jin" style="width:auto">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/bot3.jpeg" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
-<br>
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/dog2.gif" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/dog2.gif" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
+    <!--====== PRELOADER PART ENDS ======-->
 
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/dog2.gif" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
+    <!--====== NAVBAR PART START ======-->
 
-<br>
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/dog2.gif" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
+    <section class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand font-weight-bold text-white" href="#">
+                                ASHLING INNOVATION PROJECT
+                            </a>
 
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/dog2.gif" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEight" aria-controls="navbarEight" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
 
-      <div class="col-lg-4">
-        <div class="card">
-          <img src="../static/img/dog2.gif" alt="Jin" style="width:100%">
-          <div class="container">
-            <h4>Name </h4>
-            title<br>
-            email<br>
-          </div>
-        </div>
-      </div>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarEight">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="{{ url_for('makePrediction') }}">MAKE PREDICTION</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="{{ url_for('contact') }}"">DEMO REQUEST</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-</div>
-                
-        <!-- load JS files -->
-        <script src="../static/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
-        <script src="../static/js/jquery.magnific-popup.min.js"></script>     <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
-        <script src="../static/js/jquery.singlePageNav.min.js"></script>     <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
-
-        <script>
-            function openNav() {
-              document.getElementById("mySidebar").style.width = "250px";
-              document.getElementById("main").style.marginLeft = "250px";
-            }
-
-            function closeNav() {
-              document.getElementById("mySidebar").style.width = "0";
-              document.getElementById("main").style.marginLeft= "0";
-            }
-        </script>
-             
+                            <div class="navbar-btn d-none mt-15 d-lg-inline-block">
+                                <a class="menu-bar" href="#side-menu-right"><i class="lni-menu"></i></a>
+                            </div>
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navbar area -->
         
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <div id="home" class="slider-area">
+            <div class="bd-example">
+                <div id="carouselOne" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselOne" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselOne" data-slide-to="1"></li>
+                        <li data-target="#carouselOne" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item bg_cover active" style="background-image: url(static/assets/images/slider1.jpg)">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-left">
+                                        <div class="col-xl-6 col-lg-7 col-sm-10">
+                                            <h2 class="carousel-title">Extend Machinery Lifespan and Peak Performance</h2>
+                                            <!-- <ul class="carousel-btn rounded-buttons">
+                                                <li><a class="main-btn rounded-three" href="#">GET STARTED</a></li>
+                                                <li><a class="main-btn rounded-one" href="#">DOWNLOAD</a></li>
+                                            </ul> -->
+                                        </div>
+                                    </div> <!-- row -->
+                                </div> <!-- container -->
+                            </div> <!-- carousel caption -->
+                        </div> <!-- carousel-item -->
+
+                        <div class="carousel-item bg_cover" style="background-image: url(static/assets/images/slider2.jpg)">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-8 col-lg-7 col-sm-10">
+                                            <h2 class="carousel-title">Leverage High-powered RPA Software, AI & Analytics</h2>
+                                            <!-- <ul class="carousel-btn rounded-buttons">
+                                                <li><a class="main-btn rounded-three" href="#">GET STARTED</a></li>
+                                                <li><a class="main-btn rounded-one" href="#">DOWNLOAD</a></li>
+                                            </ul> -->
+                                        </div>
+                                    </div> <!-- row -->
+                                </div> <!-- container -->
+                            </div> <!-- carousel caption -->
+                        </div> <!-- carousel-item -->
+
+                        <div class="carousel-item bg_cover" style="background-image: url(static/assets/images/slider3.jpg)">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-left">
+                                        <div class="col-xl-6 col-lg-7 col-sm-10">
+                                            <h2 class="carousel-title">Intelligent Fault Diagnosis (IFD) and Useful Life Prediction</h2>
+                                            <!-- <ul class="carousel-btn rounded-buttons">
+                                                <li><a class="main-btn rounded-three" href="#">GET STARTED</a></li>
+                                                <li><a class="main-btn rounded-one" href="#">DOWNLOAD</a></li>
+                                            </ul> -->
+                                        </div>
+                                    </div> <!-- row -->
+                                </div> <!-- container -->
+                            </div> <!-- carousel caption -->
+                        </div> <!-- carousel-item -->
+                    </div> <!-- carousel-inner -->
+
+                    <a class="carousel-control-prev" href="#carouselOne" role="button" data-slide="prev">
+                        <i class="lni-arrow-left-circle"></i>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carouselOne" role="button" data-slide="next">
+                        <i class="lni-arrow-right-circle"></i>
+                    </a>
+                </div> <!-- carousel -->
+            </div> <!-- bd-example -->
+        </div>
+
+    </section>
+
+    <!--====== NAVBAR PART ENDS ======-->
+
+    <!--====== SAIDEBAR PART START ======-->
+
+    <div class="sidebar-right">
+        <div class="sidebar-close">
+            <a class="close" href="#close"><i class="lni-close"></i></a>
+        </div>
+        <div class="sidebar-content">
+            <!-- <div class="sidebar-logo text-center">
+                <a href="#"><img src="static/assets/images/logo-alt.png" alt="Logo"></a>
+            </div> -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="{{ url_for('makePrediction') }}">MAKE PREDICTION</a></li>
+                    <li><a href="{{ url_for('contact') }}"">DEMO REQUEST</a></li>
+                </ul>
+            </div> <!-- menu -->
+            <!-- <div class="sidebar-social d-flex align-items-center justify-content-center">
+                <span>FOLLOW US</span>
+                <ul>
+                    <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                </ul>
+            </div>-->
+        </div> <!-- content -->
+    </div>
+    <div class="overlay-right"></div>
+
+    <!--====== SAIDEBAR PART ENDS ======-->
+    
+    <!--====== ABOUT PART START ======-->
+
+    <section id="about" class="about-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="about-image text-center wow fadeInUp img-blur" data-wow-duration="1.5s" data-wow-offset="100">
+                        <img src="static/assets/images/services.gif" alt="services">
+                    </div>
+                    <div class="section-title text-center mt-30 pb-40">
+                        <h4 class="title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">Innovation Team 8</h4>
+                        <p class="text wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">When maintenance of machinery (physical machines deployed on site) isn’t efficiently scheduled, equipment may need to be pulled off site for repairs at inconvenient and critical times.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== ABOUT PART ENDS ======-->
+    
+    <!--====== portfolio PART START ======-->
+
+    <section id="portfolio" class="portfolio-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h3 class="title">Our Approach</h3>
+                        <p class="text">Predictive maintenance of machinery equipment using an Intelligent Automation (ML and RPA) web-based application to predict signs of degradation, time of failure and involved physical components early by analyzing the telemetry data, collected by IoT sensors, fed into it in real time to efficiently plan maintenance schedules at convenient times minimizing the maintenance costs involved otherwise</p>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 branding-3 planning-3">
+                    <div class="single-portfolio mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                        <div class="portfolio-image">
+                            <img src="static/assets/images/approach.gif" alt="">
+                        </div>
+                        <div class="portfolio-text text-center">
+                            <h4 class="portfolio-title"><a href="#">Intelligent Automation</a></h4>
+                            <p class="text">Short description here</p>
+                        </div>
+                    </div> <!-- single portfolio -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== portfolio PART ENDS ======-->
+    
+    <!--====== TESTIMONIAL THREE PART START ======-->
+
+    <section id="testimonial" class="testimonial-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h3 class="title">Meet The Team</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row testimonial-active">
+                        <div class="col-lg-4">
+                            <div class="single-testimonial mt-30 mb-30 text-center">
+                                <div class="testimonial-image">
+                                    <img src="static/assets/images/author-3.jpg" alt="Author">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                                    <h6 class="author-name">Member name here</h6>
+                                    <span class="sub-title">Title here</span>
+                                </div>
+                            </div> <!-- single testimonial -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-testimonial mt-30 mb-30 text-center">
+                                <div class="testimonial-image">
+                                    <img src="static/assets/images/author-1.jpg" alt="Author">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                                    <h6 class="author-name">Member name here</h6>
+                                    <span class="sub-title">Title here</span>
+                                </div>
+                            </div> <!-- single testimonial -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-testimonial mt-30 mb-30 text-center">
+                                <div class="testimonial-image">
+                                    <img src="static/assets/images/author-2.jpg" alt="Author">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                                    <h6 class="author-name">Member name here</h6>
+                                    <span class="sub-title">Title here</span>
+                                </div>
+                            </div> <!-- single testimonial -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="single-testimonial mt-30 mb-30 text-center">
+                                <div class="testimonial-image">
+                                    <img src="static/assets/images/author-4.jpg" alt="Author">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                                    <h6 class="author-name">Member name here</h6>
+                                    <span class="sub-title">Title here</span>
+                                </div>
+                            </div> <!-- single testimonial -->
+                        </div>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== TESTIMONIAL THREE PART ENDS ======-->
+    
+    <!--====== CONTACT TWO PART START ======-->
+
+    <section id="contact" class="contact-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h3 class="title">Get in touch</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-two mt-50 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                        <h4 class="contact-title">Lets talk about the project</h4>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam unde repellendus delectus facilis quia consequatur maxime perferendis! Sequi, modi consequatur.</p>
+                        <ul class="contact-info">
+                            <li><i class="lni-money-location"></i> Your Address here</li>
+                            <li><i class="lni-phone-handset"></i> Your Phone here</li>
+                            <li><i class="lni-envelope"></i> Your Email here</li>
+                        </ul>
+                    </div> <!-- contact two -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form form-style-one mt-35 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                        <form  id="contact-form" action="static/assets/contact.php" method="post">
+                            <div class="form-input mt-15">
+                                <label>Name</label>
+                                <div class="input-items default">
+                                    <input type="text" placeholder="Name" name="name">
+                                    <i class="lni-user"></i>
+                                </div>
+                            </div> <!-- form input -->
+                            <div class="form-input mt-15">
+                                <label>Email</label>
+                                <div class="input-items default">
+                                    <input type="email" placeholder="Email" name="email">
+                                    <i class="lni-envelope"></i>
+                                </div>
+                            </div> <!-- form input -->
+                            <div class="form-input mt-15">
+                                <label>Massage</label>
+                                <div class="input-items default">
+                                    <textarea placeholder="Massage" name="massage"></textarea>
+                                    <i class="lni-pencil-alt"></i>
+                                </div>
+                            </div> <!-- form input -->
+                            <p class="form-message"></p>
+                            <div class="form-input rounded-buttons mt-20">
+                                <button type="submit" class="main-btn rounded-three">Submit</button>
+                            </div> <!-- form input -->
+                        </form>
+                    </div> <!-- contact form -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== CONTACT TWO PART ENDS ======-->
+    
+    <!--====== FOOTER FOUR PART START ======-->
+
+    <footer id="footer" class="footer-area">
+        
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="copyright text-center text-lg-left mt-10">
+                            <p class="text">Made With <icon class="heart">❤</icon></p>
+                        </div> <!--  copyright -->
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-logo text-center mt-10">
+                            <p>Team 8</p>
+                        </div> <!-- footer logo -->
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="social text-center text-lg-right mt-10">
+                            <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni-instagram-original"></i></a></li>
+                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                        </ul> <!-- social -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer copyright -->
+    </footer>
+
+    <!--====== FOOTER FOUR PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->  
+
+    <!--====== PART START ======-->
+
+
+
+    <!--====== PART ENDS ======-->
+
+
+
+
+
+
+
+
+
+
+    <!--====== jquery js ======-->
+    <script src="static/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="static/assets/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/popper.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="static/assets/js/slick.min.js"></script>
+
+    <!--====== Isotope js ======-->
+    <script src="static/assets/js/isotope.pkgd.min.js"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="static/assets/js/imagesloaded.pkgd.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="static/assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Scrolling js ======-->
+    <script src="static/assets/js/scrolling-nav.js"></script>
+    <script src="static/assets/js/jquery.easing.min.js"></script>
+
+    <!--====== wow js ======-->
+    <script src="static/assets/js/wow.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="static/assets/js/main.js"></script>
+
 </body>
+
 </html>
