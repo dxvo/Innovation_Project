@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<title>Maintenance Overview Chart</title>
 </head>
 
 <body>
     <canvas id="myChart" width="900" height="400"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         var ctx = document.getElementById('myChart').getContext("2d");
         var myChart = new Chart(ctx, {
@@ -37,18 +37,35 @@
         },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Next Failure in (Days)',
+                            font:{
+                                size: 15
+                            }
+                        }
                     },
-                    text:'Time (days) before next failure',
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Total Count',
+                            font:{
+                                size: 15
+                            }
+                        }
+                    }                    
                 },
                 plugins:{
                     title: {
                     display: true,
-                    text: 'Machine Maintenace Overview',
+                    text: 'Fault Diagnosis Result',
                         padding: {
-                            top:10,
-                            bottom: 30
+                            top:15,
+                            bottom: 25
+                        },
+                        font:{
+                            size: 22
                         }
                     }
                  }
